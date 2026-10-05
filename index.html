@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Astronomy Research Circle | ARC</title>
+
+  <meta name="description"
+        content="Astronomy Research Circle (ARC) — advancing astronomy, space science, scientific education and research through observation, experimentation and collaboration.">
+
+  <meta name="keywords"
+        content="Astronomy Research Circle, ARC, astronomy, astrophysics, space science, astronomy club, India">
+
+  <meta name="author" content="Astronomy Research Circle">
+
+  <style>
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    :root {
+      --bg: #050814;
+      --bg2: #080d1d;
+      --card: rgba(255,255,255,0.045);
+      --card-border: rgba(255,255,255,0.09);
+
+      --text: #f4f7ff;
+      --muted: #a9b3c7;
+
+      --accent: #8ab4ff;
+      --accent2: #b99cff;
+
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(circle at 20% 10%, rgba(76, 110, 245, 0.10), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(146, 92, 255, 0.09), transparent 35%),
+        var(--bg);
+
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 1000;
+
+      background: rgba(5,8,20,0.72);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        radial-gradient(circle at 35% 30%,
+        #ffffff 0%,
+        #a8bfff 8%,
+        #697cf2 25%,
+        #1a2254 65%,
+        #080b20 100%);
+
+      box-shadow:
+        0 0 22px rgba(116,139,255,0.45);
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #cbd3e7;
+      font-size: 14px;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-button {
+      padding: 9px 17px;
+      border-radius: 8px;
+
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.85) 1px, transparent 1px);
+
+      background-size: 90px 90px;
+
+      opacity: 0.15;
+
+      animation: drift 30s linear infinite;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-90px);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      padding-top: 90px;
+
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 13px;
+
+      border-radius: 100px;
+
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+
+      color: #bdc8e3;
+
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #91b4ff;
+
+      box-shadow: 0 0 12px #91b4ff;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 92px);
+
+      line-height: 0.95;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 30px;
+    }
+
+    h1 .gradient {
+      background:
+        linear-gradient(100deg,
+        #ffffff,
+        #a9bfff,
+        #c9a8ff);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 690px;
+
+      font-size: 19px;
+
+      color: var(--muted);
+
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 21px;
+
+      border-radius: 9px;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      transition: 0.25s;
+
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #070a14;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.09);
+    }
+
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      color: #8eaaff;
+
+      text-transform: uppercase;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+
+      letter-spacing: -1.5px;
+
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 680px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 70px;
+
+      margin-top: 60px;
+    }
+
+    .about-text p {
+      color: #b8c1d4;
+
+      margin-bottom: 20px;
+
+      font-size: 16px;
+    }
+
+    .quote {
+      padding: 30px;
+
+      border-left: 2px solid #8eaaff;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(142,170,255,0.08),
+          transparent
+        );
+
+      color: #dce3f4;
+
+      font-size: 21px;
+
+      line-height: 1.5;
+    }
+
+
+    /* =========================================================
+       AREAS
+    ========================================================= */
+
+    .areas-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 55px;
+    }
+
+    .area-card {
+      padding: 28px;
+
+      min-height: 190px;
+
+      border-radius: 14px;
+
+      background: var(--card);
+
+      border: 1px solid var(--card-border);
+
+      transition: 0.3s;
+    }
+
+    .area-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(155,180,255,0.3);
+
+      background:
+        rgba(255,255,255,0.065);
+    }
+
+    .area-number {
+      color: #8098d7;
+
+      font-size: 12px;
+
+      margin-bottom: 25px;
+    }
+
+    .area-card h3 {
+      font-size: 20px;
+
+      margin-bottom: 9px;
+    }
+
+    .area-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       PROGRAMMES
+    ========================================================= */
+
+    .programme-list {
+      margin-top: 55px;
+
+      border-top: 1px solid var(--card-border);
+    }
+
+    .programme {
+      display: grid;
+
+      grid-template-columns: 160px 1fr auto;
+
+      gap: 30px;
+
+      padding: 27px 0;
+
+      border-bottom: 1px solid var(--card-border);
+
+      align-items: center;
+    }
+
+    .programme-number {
+      color: #8399d1;
+
+      font-size: 13px;
+    }
+
+    .programme h3 {
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .programme p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .programme-arrow {
+      font-size: 20px;
+      color: #889fd8;
+    }
+
+
+    /* =========================================================
+       SPACE TUTOR
+    ========================================================= */
+
+    .space-tutor {
+      padding: 55px;
+
+      border-radius: 20px;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(122,102,255,0.18),
+          transparent 35%
+        ),
+        rgba(255,255,255,0.04);
+
+      border: 1px solid rgba(255,255,255,0.09);
+
+      margin-top: 50px;
+    }
+
+    .space-tutor h3 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .space-tutor p {
+      color: var(--muted);
+
+      max-width: 750px;
+
+      margin-bottom: 25px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 7px 11px;
+
+      border-radius: 6px;
+
+      background: rgba(255,255,255,0.06);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      font-size: 12px;
+
+      color: #c7d0e6;
+    }
+
+
+    /* =========================================================
+       VISION
+    ========================================================= */
+
+    .vision {
+      text-align: center;
+    }
+
+    .vision-content {
+      max-width: 800px;
+
+      margin: 40px auto 0;
+    }
+
+    .vision-content p {
+      color: #bac3d6;
+
+      font-size: 21px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact-box {
+      margin-top: 55px;
+
+      padding: 45px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 30px;
+
+      border-radius: 16px;
+
+      background: rgba(255,255,255,0.04);
+
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+
+      margin-top: 5px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 45px 0;
+
+      border-top: 1px solid rgba(255,255,255,0.07);
+
+      color: #78839a;
+
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media(max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .areas-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .programme {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .programme-arrow {
+        display: none;
+      }
+
+      .space-tutor {
+        padding: 30px;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+  <div class="container nav-inner">
+
+    <a href="#" class="brand">
+
+      <div class="brand-mark">
+        ✦
+      </div>
+
+      <div class="brand-text">
+        Astronomy Research Circle
+        <span>ARC · Astronomy · Space · Science</span>
+      </div>
+
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="#about">About</a>
+
+      <a href="#research">Focus</a>
+
+      <a href="#programmes">Programmes</a>
+
+      <a href="#space-tutor">Space Tutor</a>
+
+      <a href="#contact" class="nav-button">
+        Connect
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+  <div class="stars"></div>
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+
+        <span class="eyebrow-dot"></span>
+
+        Astronomy · Space Science · Research · Education
+
+      </div>
+
+
+      <h1>
+
+        Exploring the
+        <span class="gradient">
+          universe.
+        </span>
+
+      </h1>
+
+
+      <p class="hero-description">
+
+        Astronomy Research Circle (ARC) is a student-driven
+        initiative dedicated to astronomy, space science,
+        scientific education, observation and research.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a href="#about"
+           class="btn btn-primary">
+
+          Discover ARC
+
+        </a>
+
+
+        <a href="#programmes"
+           class="btn btn-secondary">
+
+          Explore Programmes
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-label">
+      01 / ABOUT ARC
+    </div>
+
+    <h2 class="section-title">
+      Curiosity is where science begins.
+    </h2>
+
+    <p class="section-intro">
+
+      ARC brings together students, educators,
+      researchers and astronomy enthusiasts to
+      explore the universe through observation,
+      experimentation and scientific discussion.
+
+    </p>
+
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <p>
+          Astronomy Research Circle is an initiative
+          created to make astronomy and space science
+          accessible beyond the traditional classroom.
+        </p>
+
+        <p>
+          We believe that scientific learning becomes
+          meaningful when students can observe,
+          experiment, question and communicate their
+          understanding.
+        </p>
+
+        <p>
+          ARC therefore combines astronomy education,
+          observational activities, scientific
+          projects, expert interactions and STEM
+          outreach.
+        </p>
+
+      </div>
+
+
+      <div class="quote">
+
+        “Look up. Ask questions.
+        Understand what you see.”
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOCUS AREAS
+========================================================= -->
+
+<section id="research">
+
+  <div class="container">
+
+    <div class="section-label">
+      02 / FOCUS
+    </div>
+
+    <h2 class="section-title">
+      Areas we explore.
+    </h2>
+
+    <p class="section-intro">
+
+      ARC works across astronomy, astrophysics,
+      space science and STEM education.
+
+    </p>
+
+
+    <div class="areas-grid">
+
+
+      <div class="area-card">
+
+        <div class="area-number">
+          01
+        </div>
+
+        <h3>
+          Astronomy
+        </h3>
+
+        <p>
+          Stars, planets, galaxies, cosmology,
+          celestial phenomena and the night sky.
+        </p>
+
+      </div>
+
+
+      <div class="area-card">
+
+        <div class="area-number">
+          02
+        </div>
+
+        <h3>
+          Astrophysics
+        </h3>
+
+        <p>
+          Understanding the physical processes
+          governing astronomical objects and phenomena.
+        </p>
+
+      </div>
+
+
+      <div class="area-card">
+
+        <div class="area-number">
+          03
+        </div>
+
+        <h3>
+          Space Science
+        </h3>
+
+        <p>
+          Solar physics, space weather, planetary
+          science and the space environment.
+        </p>
+
+      </div>
+
+
+      <div class="area-card">
+
+        <div class="area-number">
+          04
+        </div>
+
+        <h3>
+          Observational Science
+        </h3>
+
+        <p>
+          Telescopes, astronomical observations,
+          sky mapping and scientific measurements.
+        </p>
+
+      </div>
+
+
+      <div class="area-card">
+
+        <div class="area-number">
+          05
+        </div>
+
+        <h3>
+          Space Technology
+        </h3>
+
+        <p>
+          Satellites, spacecraft, launch systems,
+          instrumentation and space missions.
+        </p>
+
+      </div>
+
+
+      <div class="area-card">
+
+        <div class="area-number">
+          06
+        </div>
+
+        <h3>
+          STEM Education
+        </h3>
+
+        <p>
+          Workshops, hands-on activities, science
+          communication and student-led learning.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROGRAMMES
+========================================================= -->
+
+<section id="programmes">
+
+  <div class="container">
+
+    <div class="section-label">
+      03 / PROGRAMMES
+    </div>
+
+    <h2 class="section-title">
+      Learn. Observe. Build. Explore.
+    </h2>
+
+    <p class="section-intro">
+
+      Our activities are designed around active
+      participation rather than passive learning.
+
+    </p>
+
+
+    <div class="programme-list">
+
+
+      <div class="programme">
+
+        <div class="programme-number">
+          PROGRAMME 01
+        </div>
+
+        <div>
+
+          <h3>
+            Astronomy & Space Science Camps
+          </h3>
+
+          <p>
+            Immersive programmes combining lectures,
+            experiments, observation and interaction.
+          </p>
+
+        </div>
+
+        <div class="programme-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="programme">
+
+        <div class="programme-number">
+          PROGRAMME 02
+        </div>
+
+        <div>
+
+          <h3>
+            Telescope & Night-Sky Sessions
+          </h3>
+
+          <p>
+            Practical introduction to observational
+            astronomy and celestial navigation.
+          </p>
+
+        </div>
+
+        <div class="programme-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="programme">
+
+        <div class="programme-number">
+          PROGRAMME 03
+        </div>
+
+        <div>
+
+          <h3>
+            Expert Interaction Series
+          </h3>
+
+          <p>
+            Conversations and lectures with scientists,
+            researchers and educators.
+          </p>
+
+        </div>
+
+        <div class="programme-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="programme">
+
+        <div class="programme-number">
+          PROGRAMME 04
+        </div>
+
+        <div>
+
+          <h3>
+            Hands-on STEM Workshops
+          </h3>
+
+          <p>
+            Experiments and activities involving
+            optics, telescopes, spectroscopy and space.
+          </p>
+
+        </div>
+
+        <div class="programme-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="programme">
+
+        <div class="programme-number">
+          PROGRAMME 05
+        </div>
+
+        <div>
+
+          <h3>
+            Student Science Projects
+          </h3>
+
+          <p>
+            Small investigations designed to introduce
+            students to scientific methodology.
+          </p>
+
+        </div>
+
+        <div class="programme-arrow">
+          →
+        </div>
+
+      </div>
+
+
+      <div class="programme">
+
+        <div class="programme-number">
+          PROGRAMME 06
+        </div>
+
+        <div>
+
+          <h3>
+            Astronomy & Space Science Quiz
+          </h3>
+
+          <p>
+            Competitive learning activities that
+            encourage independent exploration.
+          </p>
+
+        </div>
+
+        <div class="programme-arrow">
+          →
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SPACE TUTOR
+========================================================= -->
+
+<section id="space-tutor">
+
+  <div class="container">
+
+    <div class="section-label">
+      04 / ISRO SPACE TUTOR
+    </div>
+
+    <h2 class="section-title">
+      Inspiring the next generation.
+    </h2>
+
+
+    <div class="space-tutor">
+
+      <h3>
+        Proposed ISRO Space Tutor Initiative
+      </h3>
+
+      <p>
+
+        ARC proposes to contribute to space-science
+        outreach by creating accessible educational
+        opportunities for students to understand
+        India's space programme, astronomy and
+        space technology.
+
+      </p>
+
+      <p>
+
+        Through lectures, demonstrations,
+        observations, expert interactions and
+        student projects, ARC aims to help young
+        learners discover the science behind
+        India's exploration of space.
+
+      </p>
+
+
+      <div class="tag-list">
+
+        <span class="tag">
+          ISRO Missions
+        </span>
+
+        <span class="tag">
+          Space Science
+        </span>
+
+        <span class="tag">
+          Astronomy
+        </span>
+
+        <span class="tag">
+          Space Technology
+        </span>
+
+        <span class="tag">
+          STEM Outreach
+        </span>
+
+        <span class="tag">
+          Student Projects
+        </span>
+
+        <span class="tag">
+          Scientific Temper
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VISION
+========================================================= -->
+
+<section class="vision">
+
+  <div class="container">
+
+    <div class="section-label">
+      05 / VISION
+    </div>
+
+    <h2 class="section-title">
+      A community looking upward.
+    </h2>
+
+
+    <div class="vision-content">
+
+      <p>
+
+        ARC envisions a community where a student
+        can look at the night sky and not simply see
+        stars, but begin to ask scientific questions
+        about them.
+
+      </p>
+
+      <p style="margin-top:20px;">
+
+        We want to build bridges between curiosity,
+        education, observation, research and the
+        wider scientific community.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="section-label">
+      06 / CONNECT
+    </div>
+
+    <h2 class="section-title">
+      Let's explore together.
+    </h2>
+
+
+    <div class="contact-box">
+
+      <div>
+
+        <h3>
+          Astronomy Research Circle
+        </h3>
+
+        <p>
+          Astronomy · Space Science · Research · Education
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <!-- CHANGE THESE LINKS -->
+
+        <a
+          href="mailto:your-email@example.com"
+          class="btn btn-primary">
+
+          Contact ARC
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      © 2026 Astronomy Research Circle (ARC)
+    </div>
+
+    <div>
+      Astronomy · Space · Science
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
